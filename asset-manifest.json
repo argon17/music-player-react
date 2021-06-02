@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.js": "/argon17/music-player-react/static/js/main.6b404925.chunk.js",
-    "main.js.map": "/argon17/music-player-react/static/js/main.6b404925.chunk.js.map",
-    "runtime-main.js": "/argon17/music-player-react/static/js/runtime-main.ef74431b.js",
-    "runtime-main.js.map": "/argon17/music-player-react/static/js/runtime-main.ef74431b.js.map",
-    "static/js/2.29001346.chunk.js": "/argon17/music-player-react/static/js/2.29001346.chunk.js",
-    "static/js/2.29001346.chunk.js.map": "/argon17/music-player-react/static/js/2.29001346.chunk.js.map",
-    "index.html": "/argon17/music-player-react/index.html",
-    "precache-manifest.9a2267d7d3c33d8e67f042f4a49b431c.js": "/argon17/music-player-react/precache-manifest.9a2267d7d3c33d8e67f042f4a49b431c.js",
-    "service-worker.js": "/argon17/music-player-react/service-worker.js",
-    "static/js/2.29001346.chunk.js.LICENSE.txt": "/argon17/music-player-react/static/js/2.29001346.chunk.js.LICENSE.txt"
+    "main.js": "/music-player-react/static/js/main.6b404925.chunk.js",
+    "main.js.map": "/music-player-react/static/js/main.6b404925.chunk.js.map",
+    "runtime-main.js": "/music-player-react/static/js/runtime-main.3884316b.js",
+    "runtime-main.js.map": "/music-player-react/static/js/runtime-main.3884316b.js.map",
+    "static/js/2.29001346.chunk.js": "/music-player-react/static/js/2.29001346.chunk.js",
+    "static/js/2.29001346.chunk.js.map": "/music-player-react/static/js/2.29001346.chunk.js.map",
+    "index.html": "/music-player-react/index.html",
+    "precache-manifest.ac3a170fbbc3eebf0b5c03635797fbc0.js": "/music-player-react/precache-manifest.ac3a170fbbc3eebf0b5c03635797fbc0.js",
+    "service-worker.js": "/music-player-react/service-worker.js",
+    "static/js/2.29001346.chunk.js.LICENSE.txt": "/music-player-react/static/js/2.29001346.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.ef74431b.js",
+    "static/js/runtime-main.3884316b.js",
     "static/js/2.29001346.chunk.js",
     "static/js/main.6b404925.chunk.js"
   ]
