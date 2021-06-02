@@ -2,15 +2,14 @@ import React from 'react';
 import { Dialog, DialogActions, TextField, InputAdornment, Button, DialogTitle, DialogContent, makeStyles } from '@material-ui/core';
 import { Link, AddBoxOutlined } from '@material-ui/icons'
 import ReactPlayer from 'react-player';
-// import SoundcloudPlayer from 'react-player/lib/players/SoundCloud';
 import YoutubePlayer from 'react-player/lib/players/YouTube';
 import {ADD_SONG} from '../graphql/mutations';
-import { useMutation } from '@apollo/react-hooks';
+import { useMutation } from '@apollo/client';
 
 const useStyles = makeStyles(theme => ({
     container:{
         display: 'flex',
-        alignItems:'center'
+        alignItems:'center',
     },
     urlInput:{
         margin: theme.spacing(1)
@@ -19,7 +18,7 @@ const useStyles = makeStyles(theme => ({
         margin: theme.spacing(1)
     },
     dialog:{
-        textAlign:'center'
+        textAlign:'center',
     },
     thumbnail:{
         width:'90%'
@@ -57,26 +56,8 @@ function AddSong(){
         if(nestedPlayer.getVideoData){
             songData = getYoutubeInfo(nestedPlayer);
         }
-        // else if(nestedPlayer.getCurrentSound){
-        //     songData = await getSoundcloudInfo(nestedPlayer);
-        // }
         setSong({...songData,url});
     }
-
-    // function getSoundcloudInfo(player){
-    //     return new Promise(resolve => {
-    //         player.getCurrentSound(songData=>{
-    //             if(songData){
-    //                 resolve({
-    //                     artist: songData.user.username,
-    //                     duration: Number(songData.duration / 1000),
-    //                     thumbnail: songData.artwork_url.replace('-large','-t500x500'),
-    //                     title: songData.title,
-    //                 });
-    //             }
-    //         });
-    //     })
-    // }
 
     function getYoutubeInfo(player){
         const duration = player.getDuration();
@@ -91,7 +72,7 @@ function AddSong(){
     }
 
     async function handleAddSong(){
-        //addSong({variables:})
+
         const {artist, duration, thumbnail, title, url} = song
         try{
             await addSong({
@@ -107,7 +88,7 @@ function AddSong(){
             setSong(DEFAULT_SONG);
             setUrl('');
         }catch(error){
-            console.log('Error adding song',song);
+            console.log(JSON.stringify(error));
         }        
     }
 
@@ -119,7 +100,7 @@ function AddSong(){
         }))
     }
     function handleError(field){
-        return error?.graphQLErrors[0]?.extensions?.path.includes(field)
+        return error?.networkError?.extensions?.path.includes(field)
     }
 
     const {thumbnail,title,artist} = song;
@@ -128,6 +109,13 @@ function AddSong(){
             <Dialog
                 className={classes.dialog}
                 onClose={handleCloseDialog}
+                PaperProps={{
+                    style: {
+                      background: "linear-gradient(to right, #0f2027, #203a43, #2c5364)",
+                      boxShadow: "none"
+                    },
+                  }}
+                // style={{backgroundColor:'transparent'}}
                 open={dialog}
             >
                 <DialogTitle>Edit Song</DialogTitle>
@@ -140,7 +128,7 @@ function AddSong(){
                     <TextField
                         error={handleError('title')}
                         fullWidth
-                        helperText={handleError('title') && "Fill out field"}
+                        helperText={handleError('title') && "Invalid Input"}
                         label="Title"
                         margin="dense"
                         name="title"
@@ -150,7 +138,7 @@ function AddSong(){
                     <TextField
                         error={handleError('artist')}
                         fullWidth
-                        helperText={handleError('artist') && "Fill out field"}
+                        helperText={handleError('artist') && "Invalid Input"}
                         label="Artist"
                         margin="dense"
                         name="artist"
@@ -160,7 +148,7 @@ function AddSong(){
                     <TextField
                         error={handleError('thumbnail')}
                         fullWidth
-                        helperText={handleError('thumbnail') && "Fill out field"}
+                        helperText={handleError('thumbnail') && "Invalid Input"}
                         margin="dense"
                         label="Thumbnail"
                         name="thumbnail"
@@ -176,7 +164,7 @@ function AddSong(){
                         Cancel
                     </Button>
                     <Button 
-                        color="primary"
+                        color="white"
                         onClick={handleAddSong}
                         variant="outlined"
                     >

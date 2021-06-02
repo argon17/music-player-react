@@ -1,7 +1,13 @@
 import React from 'react';
-import { Typography, Avatar, IconButton, makeStyles, useMediaQuery } from '@material-ui/core';
+import { 
+    Typography, 
+    Avatar, 
+    IconButton, 
+    makeStyles, 
+    useMediaQuery } from '@material-ui/core';
 import { Delete } from '@material-ui/icons';
-import { useMutation } from '@apollo/react-hooks';
+
+import { useMutation } from '@apollo/client';
 import { ADD_OR_REMOVE_FROM_QUEUE } from '../graphql/mutations';
 
 function QueuedSongList({queue}){

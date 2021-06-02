@@ -3,12 +3,14 @@ import Header from './components/Header';
 import AddSong from './components/AddSong';
 import SongList from './components/SongList';
 import SongPlayer from './components/SongPlayer';
+import Footer from './components/Footer';
 import { Grid, useMediaQuery } from '@material-ui/core';
 import SongReducer, {SongContext} from './reducer';
 
 
 function App() {
-  const greaterThanMd =useMediaQuery(theme => theme.breakpoints.up('md'));
+  const greaterThanMd = useMediaQuery(theme => theme.breakpoints.up('md'));
+
   const initialSongState = React.useContext(SongContext);
   const [state, dispatch] = React.useReducer(SongReducer,initialSongState);
   
@@ -66,6 +68,7 @@ function App() {
               <SongList/>
             </Grid>
           </Grid>
+          <Footer/>
         </SongContext.Provider>
       </>
     )

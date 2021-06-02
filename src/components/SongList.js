@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { 
     Card, 
     CardActions, 
@@ -8,9 +8,9 @@ import {
     Typography, 
     IconButton, 
     makeStyles } from '@material-ui/core';
-import { PlayArrow, Save, Pause } from '@material-ui/icons';
-import { useSubscription, useMutation } from '@apollo/react-hooks';
-import { GET_SONGS } from '../graphql/subscriptions';
+import { Pause, PlayArrow, Save } from '@material-ui/icons';
+import { useMutation, useSubscription } from '@apollo/client';
+import { GET_SONGS } from '../graphql/subscriptions'
 import {PLAY_SONG, PAUSE_SONG, SET_SONG, SongContext} from '../reducer';
 import { ADD_OR_REMOVE_FROM_QUEUE } from '../graphql/mutations';
 

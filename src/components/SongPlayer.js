@@ -1,10 +1,10 @@
-import React, { useEffect, useState, useContext, useRef } from 'react';
+import React, { useEffect, useContext, useRef, useState } from 'react'
 import QueuedSongList from './QueuedSongList';
 import { Card, CardContent, Typography, IconButton, Slider, CardMedia, makeStyles } from '@material-ui/core';
 import { SkipPrevious, SkipNext, PlayArrow, Pause } from '@material-ui/icons';
 import { PAUSE_SONG, PLAY_SONG, SET_SONG, SongContext} from '../reducer';
+import { useQuery } from '@apollo/client';
 import { GET_QUEUED_SONGS } from '../graphql/queries';
-import { useQuery } from '@apollo/react-hooks';
 import ReactPlayer from 'react-player';
 
 const useStyles = makeStyles(theme=>({
