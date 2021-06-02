@@ -8,7 +8,7 @@ import {
     Typography, 
     IconButton, 
     makeStyles } from '@material-ui/core';
-import { Pause, PlayArrow, Save } from '@material-ui/icons';
+import { Pause, PlayArrow, AddCircleOutline } from '@material-ui/icons';
 import { useMutation, useSubscription } from '@apollo/client';
 import { GET_SONGS } from '../graphql/subscriptions'
 import {PLAY_SONG, PAUSE_SONG, SET_SONG, SongContext} from '../reducer';
@@ -46,7 +46,6 @@ function SongList(){
 const useStyles = makeStyles(theme=>({
     container:{
         margin: theme.spacing(1),
-        // alignContent: "center",
         background: "linear-gradient(to right, rgba(72, 85, 99, 0.5), rgba(41, 50, 60, 0.5))"
     },
     songInfoContainer:{
@@ -73,6 +72,7 @@ function Song({song}){
     const {state, dispatch} = useContext(SongContext);
     const {artist,thumbnail,title} = song;
     const [currentSongPlaying, setCurrentSongPlaying] = useState(false);
+
     const [addOrRemoveFromQueue] = useMutation(ADD_OR_REMOVE_FROM_QUEUE,{
         onCompleted: data =>{
             localStorage.setItem('queue',JSON.stringify(data.addOrRemoveFromQueue))
@@ -93,8 +93,15 @@ function Song({song}){
     }
 
     function handleTogglePlay(){
+
         dispatch({type: SET_SONG, payload: {song}})
-        dispatch({type: state.isPlaying ? PAUSE_SONG : PLAY_SONG});
+
+        if(currentSongPlaying){
+            dispatch({type: state.isPlaying ? PAUSE_SONG : PLAY_SONG});
+        }else{
+            dispatch({type: PLAY_SONG})
+        }
+
     }
 
     return (
@@ -111,11 +118,11 @@ function Song({song}){
                         </Typography>
                     </CardContent>
                     <CardActions>
-                        <IconButton onClick={handleTogglePlay} size="small" color="secondary">
+                        <IconButton onClick={handleTogglePlay} size="large" color="secondary">
                             {currentSongPlaying ? <Pause/> :<PlayArrow/>}
                         </IconButton>
-                        <IconButton onClick={handleAddOrRemoveFromQueue} size="small" color="secondary">
-                            <Save/>
+                        <IconButton onClick={handleAddOrRemoveFromQueue} size="large" color="secondary">
+                            <AddCircleOutline/>
                         </IconButton>
                     </CardActions>
                 </div>

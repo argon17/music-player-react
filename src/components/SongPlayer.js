@@ -22,6 +22,10 @@ const useStyles = makeStyles(theme=>({
         paddingLeft:theme.spacing(1),
         paddingRight:theme.spacing(1),
     },
+    timestamps:{
+        display:'flex',
+        justifyContent:'space-between'
+    },
     details:{
         display:'flex',
         flexDirection:'column',
@@ -115,8 +119,13 @@ function SongPlayer(){
                         <IconButton onClick={handlePlayNextSong}>
                             <SkipNext/>
                         </IconButton>
+                    </div>
+                    <div className={classes.timestamps}>
                         <Typography variant="subtitle1" component="p" color="textSecondary">
                             {formatDuration(playedSeconds)}
+                        </Typography>
+                        <Typography variant="subtitle1" component="p" color="textSecondary">
+                            {formatDuration(state.song.duration)}
                         </Typography>
                     </div>
                     <Slider
