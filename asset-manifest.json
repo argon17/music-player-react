@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/music-player-react/static/js/main.3b4b91f9.chunk.js",
-    "main.js.map": "/music-player-react/static/js/main.3b4b91f9.chunk.js.map",
+    "main.js": "/music-player-react/static/js/main.d30b4850.chunk.js",
+    "main.js.map": "/music-player-react/static/js/main.d30b4850.chunk.js.map",
     "runtime-main.js": "/music-player-react/static/js/runtime-main.3884316b.js",
     "runtime-main.js.map": "/music-player-react/static/js/runtime-main.3884316b.js.map",
     "static/js/2.61c06e54.chunk.js": "/music-player-react/static/js/2.61c06e54.chunk.js",
     "static/js/2.61c06e54.chunk.js.map": "/music-player-react/static/js/2.61c06e54.chunk.js.map",
     "index.html": "/music-player-react/index.html",
-    "precache-manifest.31539dfe22e549da35f5653b48ac313f.js": "/music-player-react/precache-manifest.31539dfe22e549da35f5653b48ac313f.js",
+    "precache-manifest.6af87846559fc996c216c81e1ca21d3d.js": "/music-player-react/precache-manifest.6af87846559fc996c216c81e1ca21d3d.js",
     "service-worker.js": "/music-player-react/service-worker.js",
     "static/js/2.61c06e54.chunk.js.LICENSE.txt": "/music-player-react/static/js/2.61c06e54.chunk.js.LICENSE.txt",
     "static/media/identity.png": "/music-player-react/static/media/identity.3f5fb37f.png"
@@ -15,6 +15,6 @@
   "entrypoints": [
     "static/js/runtime-main.3884316b.js",
     "static/js/2.61c06e54.chunk.js",
-    "static/js/main.3b4b91f9.chunk.js"
+    "static/js/main.d30b4850.chunk.js"
   ]
 }
