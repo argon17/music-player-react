@@ -34,9 +34,11 @@ function Header(){
                     {greaterThanMd && 
                         <>
                         <Typography variant="body1" color="inherit">
-                            Developed and Designed by argon &nbsp;
+                            Developed and designed by argon &nbsp;
                         </Typography>
-                        <img src={identity} className={classes.avatar} alt="argon" />
+                        <a href="https://github.com/argon17" >
+                            <img src={identity} className={classes.avatar} alt="argon" />
+                        </a>
                         </>
                     }
                 </div>

@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from 'react';
 import { 
     Card, 
     CardActions, 
-    CircularProgress, 
     CardContent, 
     CardMedia, 
     Typography, 
@@ -24,9 +23,8 @@ function SongList(){
                 alignItems:'center',
                 display:'flex',
                 flexDirection:'column',
-                marginTop: 50
             }}>
-                <CircularProgress/>
+                Loading songs...
             </div>
         );
     }
@@ -118,10 +116,10 @@ function Song({song}){
                         </Typography>
                     </CardContent>
                     <CardActions>
-                        <IconButton onClick={handleTogglePlay} size="large" color="secondary">
+                        <IconButton onClick={handleTogglePlay} size="medium" color="secondary">
                             {currentSongPlaying ? <Pause/> :<PlayArrow/>}
                         </IconButton>
-                        <IconButton onClick={handleAddOrRemoveFromQueue} size="large" color="secondary">
+                        <IconButton onClick={handleAddOrRemoveFromQueue} size="medium" color="secondary">
                             <AddCircleOutline/>
                         </IconButton>
                     </CardActions>

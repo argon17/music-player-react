@@ -21,9 +21,11 @@ const Footer = () => {
           <Container>
             <Toolbar className={classes.toolbar} >
               <Typography variant="body1" color="inherit">
-                Developed and Designed by argon &nbsp;
+                Developed and designed by argon &nbsp;
               </Typography>
-              <img src={identity} className={classes.avatar} alt="argon" />
+              <a href="https://github.com/argon17" target="_blank" rel="noopener noreferrer" >
+                <img src={identity} className={classes.avatar} alt="argon" />
+              </a>
             </Toolbar>
           </Container>
         </AppBar>
