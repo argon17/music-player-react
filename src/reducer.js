@@ -9,7 +9,7 @@ export const SongContext = createContext({
       id:"d9443a71-16ab-4a7e-aff7-1a226ddeb47b",
       title: "Pariah",
       artist: "Steven Wilson, Ninet Tayeb",
-      thumbnail : "http://img.youtube.com/vi/cNTaFArEObU/0.jpg",
+      thumbnail : "https://img.youtube.com/vi/cNTaFArEObU/0.jpg",
       url: "https://youtu.be/cNTaFArEObU",
       duration: 279,
     },
